@@ -46,4 +46,40 @@ class PointNim extends BaseController
         $pointnim->insert($data);
         return redirect()->to('/pointnim/lihat');
     }
+
+    public function delete($kode)
+    {
+        $pointnim = new \App\Models\PointNim();
+        $pointnim->delete($kode);
+        session()->setFlashdata('pesan', "Data $kode berhasil dihapus");
+        return redirect()->to('/pointnim/lihat');
+    }
+
+    public function edit($kode)
+    {
+        $pointnim = new \App\Models\PointNim();
+        $point = $pointnim->find($kode);
+        $data = [
+            'title' => 'EDIT MAHASISWA',
+            'point' => $point
+        ];
+
+        return view('pages/edit', $data);
+    }
+
+    public function update()
+    {
+        $pointnim = new \App\Models\PointNim();
+        $data = [
+            'kode' => $this->request->getVar('kode'),
+            'nim' => $this->request->getVar('nim'),
+            'nama' => $this->request->getVar('nama'),
+            'kegiatan' => $this->request->getVar('kegiatan'),
+            'tanggal' => $this->request->getVar('tanggal'),
+            'point' => $this->request->getVar('point')
+        ];
+        $pointnim->save($data);
+        session()->setFlashdata('pesan', 'Data berhasil diubah');
+        return redirect()->to('/pointnim/lihat');
+    }
 }

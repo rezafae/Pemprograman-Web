@@ -33,7 +33,13 @@
                             <td><?= $p['kegiatan']; ?></td>
                             <td><?= $p['tanggal']; ?></td>
                             <td><?= $p['point']; ?></td>
-                            <!-- <td><a href="/lihat_nim/<?= $p['kode']; ?>" class="btn btn-dark">Detail</a></td> -->
+                            <td>
+                                <a href="/pointnim/edit/<?= $p['kode']; ?>" class="btn btn-warning">Edit</a>
+                                <a href="/pointnim/delete/<?= $p['kode']; ?>" class="btn btn-danger" onclick="return confirm('apakah yakin akan hapus <?= $p['kode']; ?>');">Hapus</a>
+                            </td>
+
+
+
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

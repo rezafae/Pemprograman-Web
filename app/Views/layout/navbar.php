@@ -10,8 +10,9 @@
                 <a class="nav-link active" aria-current="page" href="/pages/index">Home</a>
                 <a class="nav-link" href="/pages/about">About</a>
                 <a class="nav-link" href="/pages/contact">Contact</a>
-                <a class="nav-link" href="/produk/index">Produk</a>
-                <a class="nav-link" href="/produk/input">Input Produk</a>
+                <a class="nav-link" href="/Pointnim/lihat">Lihat Mahasiswa</a>
+                <a class="nav-link" href="/Pointnim/input">Input Mahasiswa</a>
+
 
             </div>
         </div>
